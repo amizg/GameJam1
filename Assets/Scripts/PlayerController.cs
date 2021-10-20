@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
         CheckIfGrounded();
         BetterJump();
         ChangeO2();
-        Debug.Log(currentO2 + "/" + maxO2);
     }
 
     void FixedUpdate()
@@ -47,7 +46,8 @@ public class PlayerController : MonoBehaviour
         {
             currentO2 -= 0.5f * Time.deltaTime;
         }
-     
+        UIO2Bar.instance.SetValue(currentO2 / maxO2);
+
     }
 
     void Jump()
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
 
     void ChangeO2()
     {
-
+        Debug.Log((int)currentO2 + "/" + maxO2);
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) )
         {
             if (currentO2 > 0)
