@@ -6,12 +6,12 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] asteroidPrefabs;
 
-    private float spawnLimitXLeft = -22;
-    private float spawnLimitXRight = 7;
-    private float spawnPosY = 30;
+    public float spawnLimitXLeft = -22;
+    public float spawnLimitXRight = 7;
+    public float spawnPosY = 30;
 
     private float startDelay = 1.0f;
-    private float spawnInterval = 6.0f;
+    private float spawnInterval = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
         // instantiate ball at random spawn location
         Instantiate(asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)], spawnPos, asteroidPrefabs[0].transform.rotation);
 
-        spawnInterval = Random.Range(3.0f, 5.0f);
+        spawnInterval = Random.Range(0.3f, 1.5f);
         Invoke("SpawnAsteroid", spawnInterval);
     }
 

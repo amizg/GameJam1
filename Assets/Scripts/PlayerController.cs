@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         BetterJump();
         ChangeO2();
         Debug.Log(currentO2 + "/" + maxO2);
-        
     }
 
     void FixedUpdate()
@@ -102,7 +101,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space) && !isGrounded && currentO2 > 0)
         {
-            currentO2 -= 4f * Time.deltaTime;
+            currentO2 -= 5.0f * Time.deltaTime;
         }
     }
 }
