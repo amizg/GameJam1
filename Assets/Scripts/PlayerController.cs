@@ -42,13 +42,23 @@ public class PlayerController : MonoBehaviour
         move = Input.GetAxis("Horizontal") * runSpeed * Time.fixedDeltaTime;
         animator.SetFloat("Speed", Mathf.Abs(move));
 
+        if (isGrounded)
+        {
+            animator.SetBool("Grounded", true);
+        }
+        else if (!isGrounded)
+        {
+            animator.SetBool("Grounded", false);
+        }
+
+        CheckIfGrounded();
         Move(move);
         Jump();
-        CheckIfGrounded();
         BetterJump();
         ChangeO2();
 
-        
+
+
     }
 
     void FixedUpdate()
@@ -58,7 +68,15 @@ public class PlayerController : MonoBehaviour
             currentO2 -= 0.5f * Time.deltaTime;
         }
         UIO2Bar.instance.SetValue(currentO2 / maxO2);
+    }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Asteroid")
+        {
+            Debug.Log("Asteroid Collision");
+            controller.enabled = false;
+        }
     }
 
     void Move(float move)
@@ -71,7 +89,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            animator.SetTrigger("Jump");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
         }
     }
 
@@ -107,7 +126,6 @@ public class PlayerController : MonoBehaviour
 
     void ChangeO2()
     {
-        Debug.Log((int)currentO2 + "/" + maxO2);
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) )
         {
             if (currentO2 > 0)

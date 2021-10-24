@@ -1,31 +1,31 @@
 fileFormatVersion: 2
-guid: 62c02cf2a91714d468f6aeba0f8a3d37
+guid: d90cc05b279861a428e7325116f5c2ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5443726380021700835
-    second: Astronaut_Walk-Sheet_0
+      213: 7182329926372676542
+    second: Astronaut_Walk-Sheet 1_0
   - first:
-      213: 4601226607715907216
-    second: Astronaut_Walk-Sheet_1
+      213: 4529139266784132464
+    second: Astronaut_Walk-Sheet 1_1
   - first:
-      213: 6576951421965889114
-    second: Astronaut_Walk-Sheet_2
+      213: 8007953083135409164
+    second: Astronaut_Walk-Sheet 1_2
   - first:
-      213: -1913639911821180866
-    second: Astronaut_Walk-Sheet_3
+      213: -7919018758003534444
+    second: Astronaut_Walk-Sheet 1_3
   - first:
-      213: 5644818309888960534
-    second: Astronaut_Walk-Sheet_4
+      213: -5185299568953519887
+    second: Astronaut_Walk-Sheet 1_4
   - first:
-      213: 4729996813656072273
-    second: Astronaut_Walk-Sheet_5
+      213: -1149313152413240597
+    second: Astronaut_Walk-Sheet 1_5
   - first:
-      213: -3808240603835768502
-    second: Astronaut_Walk-Sheet_6
+      213: -5052024883287087422
+    second: Astronaut_Walk-Sheet 1_6
   - first:
-      213: 7448998362209931529
-    second: Astronaut_Walk-Sheet_7
+      213: 2147354409149199649
+    second: Astronaut_Walk-Sheet 1_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_0
+      name: Astronaut_Walk-Sheet 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,14 +141,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d17226013bff374b0800000000000000
-      internalID: -5443726380021700835
+      spriteID: eb3d911b303cca360800000000000000
+      internalID: 7182329926372676542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_1
+      name: Astronaut_Walk-Sheet 1_1
       rect:
         serializedVersion: 2
         x: 64
@@ -162,14 +162,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0967bfba837dadf30800000000000000
-      internalID: 4601226607715907216
+      spriteID: 07df0feaa2cbade30800000000000000
+      internalID: 4529139266784132464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_2
+      name: Astronaut_Walk-Sheet 1_2
       rect:
         serializedVersion: 2
         x: 128
@@ -183,14 +183,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ee64bd876064b50800000000000000
-      internalID: 6576951421965889114
+      spriteID: c0cb742b6e6f12f60800000000000000
+      internalID: 8007953083135409164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_3
+      name: Astronaut_Walk-Sheet 1_3
       rect:
         serializedVersion: 2
         x: 192
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3083eb93a26175e0800000000000000
-      internalID: -1913639911821180866
+      spriteID: 4955b87756ef91290800000000000000
+      internalID: -7919018758003534444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_4
+      name: Astronaut_Walk-Sheet 1_4
       rect:
         serializedVersion: 2
         x: 256
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6186d86685c665e40800000000000000
-      internalID: 5644818309888960534
+      spriteID: 1f01a82d38d1a08b0800000000000000
+      internalID: -5185299568953519887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_5
+      name: Astronaut_Walk-Sheet 1_5
       rect:
         serializedVersion: 2
         x: 320
@@ -246,14 +246,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15023ba9a0354a140800000000000000
-      internalID: 4729996813656072273
+      spriteID: be279b6f6c1dc00f0800000000000000
+      internalID: -1149313152413240597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_6
+      name: Astronaut_Walk-Sheet 1_6
       rect:
         serializedVersion: 2
         x: 384
@@ -267,14 +267,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4166250959662bc0800000000000000
-      internalID: -3808240603835768502
+      spriteID: 2c62d3ba22a93e9b0800000000000000
+      internalID: -5052024883287087422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astronaut_Walk-Sheet_7
+      name: Astronaut_Walk-Sheet 1_7
       rect:
         serializedVersion: 2
         x: 448
@@ -288,8 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9015dff3b88206760800000000000000
-      internalID: 7448998362209931529
+      spriteID: 125f43c357feccd10800000000000000
+      internalID: 2147354409149199649
       vertices: []
       indices: 
       edges: []
