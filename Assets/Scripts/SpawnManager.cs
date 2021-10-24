@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
         // instantiate ball at random spawn location
         Instantiate(asteroidPrefabs[Random.Range(0, asteroidPrefabs.Length)], spawnPos, asteroidPrefabs[0].transform.rotation);
 
-        spawnInterval = Random.Range(0.3f, 1.5f);
+        spawnInterval = Random.Range(0.3f, 1.0f);
         Invoke("SpawnAsteroid", spawnInterval);
     }
 

@@ -4,44 +4,55 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public CharacterController2D controller;
+
     public int maxO2;
     float currentO2;
 
-    public float speed;
+    public float runSpeed;
     public float jumpForce;
     public Transform isGroundedChecker;
     public float checkGroundRadius;
     public LayerMask groundLayer;
+
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public float rememberGroundedFor;
     float lastTimeGrounded;
     bool isGrounded = false;
 
-    private float moveInput;
+    private float move;
 
-    private Rigidbody2D rigidBody2d;
+    private Rigidbody2D rb;
+
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         currentO2 = maxO2;
-        rigidBody2d = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Get directional input
+        move = Input.GetAxis("Horizontal") * runSpeed * Time.fixedDeltaTime;
+        animator.SetFloat("Speed", Mathf.Abs(move));
+
+        Move(move);
         Jump();
         CheckIfGrounded();
         BetterJump();
         ChangeO2();
+
+        
     }
 
     void FixedUpdate()
     {
-        moveInput = Input.GetAxis("Horizontal");
-        rigidBody2d.velocity = new Vector2(moveInput * speed, rigidBody2d.velocity.y);
         if (currentO2 > 0)
         {
             currentO2 -= 0.5f * Time.deltaTime;
@@ -50,11 +61,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void Move(float move)
+    {
+        //Move Player
+        controller.Move(move, false, false);
+    }
+
     void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor))
         {
-            rigidBody2d.velocity = new Vector2(rigidBody2d.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
 
@@ -77,14 +94,14 @@ public class PlayerController : MonoBehaviour
 
     void BetterJump()
     {
-        if (rigidBody2d.velocity.y < 0)
+        if (rb.velocity.y < 0)
         {
-            rigidBody2d.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity * (fallMultiplier - 1) * Time.deltaTime;
             
         }
-        else if (rigidBody2d.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
+        else if (rb.velocity.y > 0 && !Input.GetKey(KeyCode.Space))
         {
-            rigidBody2d.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 
