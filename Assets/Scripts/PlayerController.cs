@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public DeathMenu deathMenuUI;
 
     public int maxO2;
     float currentO2;
@@ -68,6 +69,15 @@ public class PlayerController : MonoBehaviour
             currentO2 -= 0.5f * Time.deltaTime;
         }
         UIO2Bar.instance.SetValue(currentO2 / maxO2);
+
+        if(rb.position.y < -10f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+        if (currentO2 <= 0)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
