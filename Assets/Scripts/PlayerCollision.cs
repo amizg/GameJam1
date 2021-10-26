@@ -10,7 +10,7 @@ public class PlayerCollision : MonoBehaviour
         if (collider.tag == "Asteroid")
         {
             Debug.Log("Asteroid Collision");
-
+            controller.animator.SetTrigger("Asteroid");
             controller.enabled = false;
             FindObjectOfType<GameManager>().EndGame();
         }

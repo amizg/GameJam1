@@ -76,16 +76,8 @@ public class PlayerController : MonoBehaviour
         }
         if (currentO2 <= 0)
         {
+            animator.SetTrigger("Choke");
             FindObjectOfType<GameManager>().EndGame();
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.tag == "Asteroid")
-        {
-            Debug.Log("Asteroid Collision");
-            controller.enabled = false;
         }
     }
 

@@ -33,7 +33,14 @@ public class AsteroidController : MonoBehaviour
             animator.SetTrigger("Impact");
             rb.velocity = Vector3.zero;
             rb.isKinematic = true;
+            Destroy(gameObject, 0.30f);
         }
-        Destroy(gameObject, 0.30f);
+        if (other.tag == "Player")
+        {
+            rb.velocity = Vector3.zero;
+            rb.isKinematic = true;
+            Destroy(gameObject);
+        }
+        
     }
 }
