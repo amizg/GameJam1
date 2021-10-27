@@ -18,7 +18,7 @@ public class AsteroidController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.magnitude > 100.0f)
+        if (transform.position.y < -8)
         {
             Destroy(gameObject);
         }

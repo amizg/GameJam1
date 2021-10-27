@@ -9,13 +9,14 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collider.tag == "Asteroid")
         {
+            controller.isAlive = false;
             Debug.Log("Asteroid Collision");
             controller.animator.SetTrigger("Asteroid");
             controller.enabled = false;
             FindObjectOfType<GameManager>().EndGame();
         }
 
-        if (collider.tag == "Shuttle")
+        if (collider.tag == "Shuttle" && controller.isAlive)
         {
             Debug.Log("Made it to the shuttle");
             controller.enabled = false;
@@ -23,5 +24,4 @@ public class PlayerCollision : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
 }

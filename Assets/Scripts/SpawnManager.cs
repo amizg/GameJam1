@@ -5,9 +5,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] asteroidPrefabs;
-
     public float spawnLimitXLeft = -22;
-    public float spawnLimitXRight = 7;
+    public float spawnLimitXRight = 170;
     public float spawnPosY = 30;
 
     private float startDelay = 1.0f;

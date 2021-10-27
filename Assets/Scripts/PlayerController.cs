@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     float lastTimeGrounded;
     bool isGrounded = false;
 
+    public bool isAlive = true;
+
     private float move;
 
     private Rigidbody2D rb;
@@ -57,9 +59,6 @@ public class PlayerController : MonoBehaviour
         Jump();
         BetterJump();
         ChangeO2();
-
-
-
     }
 
     void FixedUpdate()
@@ -76,6 +75,7 @@ public class PlayerController : MonoBehaviour
         }
         if (currentO2 <= 0)
         {
+            isAlive = false;
             animator.SetTrigger("Choke");
             FindObjectOfType<GameManager>().EndGame();
         }
