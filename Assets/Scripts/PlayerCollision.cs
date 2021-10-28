@@ -4,6 +4,7 @@ public class PlayerCollision : MonoBehaviour
 {
 
     public PlayerController controller;
+    public ShuttleController shuttle;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -18,6 +19,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (collider.tag == "Shuttle" && controller.isAlive)
         {
+            shuttle.animator.SetTrigger("Win");
             Debug.Log("Made it to the shuttle");
             controller.enabled = false;
             FindObjectOfType<WinMenu>().Win();
